@@ -1,0 +1,50 @@
+{% extends "include/base.html" %}
+{% load static %}
+{% load bootstrap4 %}
+{% block link %}
+<link href="{% static "css/question.css" %}" rel="stylesheet">
+
+{% endblock link %}
+{% block header %}
+{% include "include/navbar.html" %}
+{% endblock header %}
+{% block content %}
+          <div class="row">
+            <div class="col-3">
+              <img src="{{ question.author.avatar.url }}" id="main_ava">
+              <button id="like_btn" class="btn">Like</button>
+              <div class="likes">22</div>
+            </div>
+            <div class="col-9">
+              <h3 class="title">{{ question.title }}</h3>
+              <div class="text" id="text_question">
+               {{ question.text }}
+             </div>
+             <div class="row_in_question">
+              Tags:
+              {% for tag in question.tags.all %}
+                <a href="{% url "tag" tag=tag %}" class="black-jeck">{{ tag }}</a>
+                {% endfor %}
+            </div>
+
+          </div>
+          <hr id="hr">
+        </div>
+
+{% for answer in answers %}
+    {% include "include/answer.html" %}
+{% endfor %}
+    {% if user.is_authenticated %}
+
+  <form method="POST" action="{{ request.path }}" name="form" novalidate>
+<!--    <textarea class="form-control"  rows="4" placeholder="Enter your answer here.."></textarea>-->
+            {% csrf_token %}
+
+    {% bootstrap_form form %}
+
+      {% buttons %}
+    <button required type="submit" class="btn btn-secondary btn_answer">Answer</button>
+      {% endbuttons %}
+  </form>
+{% endif %}
+{% endblock content %}

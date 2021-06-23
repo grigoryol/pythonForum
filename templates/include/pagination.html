@@ -1,0 +1,25 @@
+<!--<div>
+  <button class="btn switching_pages" id="num1">1</button>
+  <button class="btn switching_pages">2</button>
+  <button class="btn switching_pages">3</button>
+  <button class="btn switching_pages" id="num4">4</button>
+  ...
+  <button class="btn switching_pages">57</button>
+</div> -->
+<div class="pagination">
+    <span class="step-links">
+        {% if questions.has_previous %}
+            <a href="?page=1">&laquo; first</a>
+            <a href="?page={{ questions.previous_page_number }}">previous</a>
+        {% endif %}
+
+        <span class="current">
+            Page {{ questions.number }} of {{ questions.paginator.num_pages }}.
+        </span>
+
+        {% if questions.has_next %}
+            <a href="?page={{ questions.next_page_number }}">next</a>
+            <a href="?page={{ questions.paginator.num_pages }}">last &raquo;</a>
+        {% endif %}
+    </span>
+</div>

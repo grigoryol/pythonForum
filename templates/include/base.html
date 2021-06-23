@@ -1,0 +1,66 @@
+
+<!doctype html>
+{% load static %}
+<html lang="en" class="h-100">
+<head>
+  <meta charset="utf-8">
+  <title>PythonForumStarcev</title>
+  <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
+  <link href="{% static "css/maincss.css" %}" rel="stylesheet">
+    {% block link %}
+    {% endblock link %}
+    {% block header %}
+    {% endblock header %}
+</head>
+<!-- Begin page content -->
+<main class="flex-shrink-0">
+ <div class="container">
+  <div class = "row mid_block">
+   <div class = "col-8">
+    {% block content %} {% endblock content %}
+   </div>
+   <div class = "col-4">
+    <h2 id="Popular_tags">Popular Tags</h2>
+    <ul>
+     <li>
+      <ul>
+       <li>Perl</li>
+       <li id="red">Python</li>
+       <li>MyForum</li>
+     </ul>
+   </li>
+   <li>
+    <ul>
+     <li id="red">MySQL</li>
+     <li id="green">django</li>
+   </ul>
+ </li>
+ <li>
+  <ul>
+   <li>Mail.ru</li>
+   <li>Yandex</li>
+   <li id="orange">Firefox</li>
+ </ul>
+</li>
+</ul>
+<h2 id="Best_members">Best Members</h2>
+<ul class="member">
+ <li><a href="#5">Mr.Freeman</a></li>
+ <li><a href="#5">Dr.House</a></li>
+ <li><a href="#5">Bender</a></li>
+ <li><a href="#5">Queen Victoria</a></li>
+ <li><a href="#5">V.Pupkin</a></li>
+</ul>
+</div>
+</div>
+</div>
+{% block pagination %}    {% endblock pagination %}
+    <footer>
+        &copy; Старцев Григорий
+    </footer>
+</main>
+
+<script src="{% static "js/bootstrap.bundle.min.js" %}"></script>
+{% block linkjs %} {% endblock linkjs %}
+</body>
+</html>

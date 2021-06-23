@@ -1,0 +1,31 @@
+
+
+#text_question {
+	margin-bottom: 3%;
+}
+
+.question img {
+	margin-bottom: 7%;
+}
+
+#main_ava {
+	width: 170px;
+	margin-bottom: 4%;
+}
+
+#hr {
+	margin-top:3%;
+}
+.form-check {
+	float: right;
+	margin-right: 10%;
+}
+
+.btn_answer {
+	margin-top: 2%;
+	margin-bottom: 2%;
+}
+
+.answer_ava {
+    width:100px;
+}

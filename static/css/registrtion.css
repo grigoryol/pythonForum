@@ -1,0 +1,20 @@
+
+
+.form_log {
+	margin-top: 3%;
+}
+
+.logs {
+	margin-top: 2%;
+}
+
+.login_form {
+	margin-top: 3%;
+	width: 70%
+}
+
+
+#invisible {
+	color: red;
+	display: none;
+}

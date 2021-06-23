@@ -1,0 +1,42 @@
+{% extends "include/base.html" %}
+{% load static %}
+{% load bootstrap4 %}
+{% block link %}
+<link href="{% static "css/login.css" %}" rel="stylesheet">
+<link href="{% static "css/maincss.css" %}" rel="stylesheet">
+{% endblock link %}
+{% block header %}
+{% include "include/navbar.html" %}
+{% endblock header %}
+
+{% block content %}
+<h2 id="new_question">Log In</h2>
+{% if error_message %}<p class="error_log_message">{{ error_message }}</p> {% endif %}
+<form class="login_form" method="POST" action="/login/?next={{ redirect_to }}" name="form" novalidate>
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    {% buttons %}
+    <input required type="submit" class="btn btn-outline-secondary form_log" id="hidden" value="Log in">
+    {% endbuttons %}
+    <p class="form_log"><a href="#1">Create new account</a></p>
+    <!--      <div class="row">-->
+    <!--        <div class="col-2">Login</div>-->
+    <!--        <div class="col-4">      -->
+    <!--          <input type="text" name="user" placeholder="login"></div>-->
+    <!--        </div>-->
+    <!--        <div class="row">-->
+    <!--          <div class="col-2">Password</div>-->
+    <!--          <div class="col-4">-->
+    <!--            <input type="Password" name="Password" placeholder="Password" minlength="6">-->
+    <!--            <input required type="submit" class="btn btn-outline-secondary form_log" id="hidden" value="Log in">-->
+    <!--            <p class="form_log"><a href="#1">Create new account</a></p>-->
+    <!--          </div>-->
+    <!--        </div>-->
+    <!--        -->
+</form>
+{% endblock content %}
+{% block linkjs %}
+<script type="text/javascript" src="{% static "js/login.js" %}"></script>
+{% endblock linkjs %}
+
+

@@ -1,0 +1,65 @@
+{% extends "include/base.html" %}
+{% load static %}
+{% load bootstrap4 %}
+{% block link %}
+<link href="{% static "css/registrtion.css" %}" rel="stylesheet">
+{% endblock link %}
+{% block header %}
+{% include "include/navbar.html" %}
+{% endblock header %}
+{% block content %}
+    <h2 id="new_question">Registration</h2>
+
+
+    <form role="form" class="login_form" action="{% url 'registration' %}" method="POST" novalidate>
+        {% csrf_token %}
+{% for error in error_message %}
+        <p class="error_log_message">{{ error }}</p>
+    {% endfor %}
+            {% bootstrap_form form %}
+{% buttons %}
+        <input required type="submit" class="btn btn-outline-secondary form_log" value="Sign up">
+                  {% endbuttons %}
+<!--      <div class="row logs">-->
+<!--        <div class="col-2">First name</div>-->
+<!--        <div class="col-4">-->
+<!--          <input type="text" name="first_name" type="first_name" placeholder="First name"></div>-->
+<!--        </div>-->
+<!--        <div class="row logs">-->
+<!--        <div class="col-2">Last name</div>-->
+<!--        <div class="col-4">-->
+<!--          <input type="text" name="last_name" type="last_name" placeholder="Last name"></div>-->
+<!--        </div>-->
+<!--        <div class="row logs">-->
+<!--        <div class="col-2">Email</div>-->
+<!--        <div class="col-4">-->
+<!--          <input type="email" name="email" type="email" placeholder="Email"></div>-->
+<!--        </div>-->
+<!--        <div class="row logs">-->
+<!--        <div class="col-2">Username</div>-->
+<!--        <div class="col-4">-->
+<!--          <input type="text" name="username" type="username" placeholder="NickName"></div>-->
+<!--        </div>-->
+<!--        <div class="row logs">-->
+<!--          <div class="col-2">Password</div>-->
+<!--          <div class="col-4"><input type="password" name="password" placeholder="Password" minlength="6">-->
+<!--          </div>-->
+<!--        </div>-->
+<!--         <div class="row logs">-->
+<!--          <div class="col-2">Repeat password</div>-->
+<!--          <div class="col-4"><input type="password" name="password_confirm" placeholder="Repeat password" minlength="6">-->
+<!--          </div>-->
+<!--        </div>-->
+<!--        <div class="row logs">-->
+<!--          <div class="col-2">Upload your avatar:</div>-->
+<!--          <div class="col-4"><input required type="file" id="g5" name="img0">-->
+
+
+<!--          </div>-->
+<!--       </div>-->
+      </form>
+{% endblock content %}
+
+{% block linkjs %}
+<script type="text/javascript" src="{% static "js/login.js" %}" defer></script>
+{% endblock linkjs %}

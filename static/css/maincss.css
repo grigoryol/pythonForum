@@ -1,0 +1,193 @@
+main > .container {
+  padding: 60px 15px 0;
+}
+
+.question {
+    border: 1px gray solid;
+    border-radius: 17px;
+    padding: 17px;
+    margin-bottom: 15px;
+}
+
+.question img {
+	width: 150px;
+	margin-bottom: 10px;
+}
+
+.row {
+	margin-top: 10px;
+
+}
+.mid_block{
+    min-height: calc(100vh - 110px);
+}
+.navbar-nav {
+	width: 100%;
+}
+
+.avatar {
+	width: 30%;
+}
+.ava_img {
+    height:100%;
+}
+.avatar img {
+	width: 40px;
+	height: 40px;
+	float: right;
+}
+
+.btn {
+	vertical-align: baseline;
+	font-weight: bold; 
+
+}
+.search {
+	width: 30%;
+}
+
+.search_text {
+	width: 100%;
+}
+.btn_ask {
+    width: 40%;
+}
+.btn_search_li{
+    width: 20%;
+}
+
+.brand_askme {
+	margin-right: 2%;
+}
+
+.user {
+	width: 20%;
+
+}
+.user_ul {
+	list-style-type: none; 
+	font-size: 87%;
+    font-weight: bold;
+    color: white;
+    letter-spacing: 0.5px;
+}
+
+.href_settings {
+	margin-right: 5%
+}
+
+.new_hot_question {
+	font-weight: bold; 
+	font-size: 24px;
+	text-align: center;
+	
+}
+
+.new_hot_question a {
+	margin-left: 10%;
+}
+
+.like_btn {
+	float: left;
+	margin-left: 10px;
+
+}
+
+.likes {
+	display: contents;
+	float: right;
+	vertical-align: middle;
+    font: 14px;
+}
+
+.Answer_string {
+	margin:15%;
+}
+
+.row_in_question {
+	float: right;
+	margin-left: 40%;
+	vertical-align: middle;
+	display: contents;
+	font-weight: bold; 
+	font-size: 16px;
+	text-align: center;
+}
+
+.black-jeck {
+	margin-left:1%;
+}
+
+.switching_pages {
+	margin-top: 1%;
+	margin-left:3%;
+	margin-bottom: 20px;
+}
+
+#num1 {
+	margin-left: 7%;
+}
+
+#num4 {
+	margin-right: 3%;
+}
+
+.col-4>#Popular_tags {
+	text-align: center;
+}
+
+.col-4>ul {
+	margin-top: 5%;
+	list-style-type: none;
+}
+
+.col-4>ul>li>ul {
+	margin-top: 5%;
+}
+
+.col-4>ul>li>ul>li {
+	display: inline;
+	margin:2%;
+	font-size: 23px;
+}
+
+#red {
+	color: red;
+}
+
+#green {
+	color: green;
+}
+
+#orange {
+	color: orange; 
+}
+
+#Best_members {
+	text-align: center;
+	margin-top: 10%;
+}
+
+.member {
+	margin-left: 9%;
+}
+
+.member>li {
+	margin-top: 5%;
+	font-size: 21px;
+}
+
+footer {
+    position: static;
+    bottom: 0; /* Левый нижний угол */
+    padding: 10px; /* Поля вокруг текста */
+    background: #212529; /* Цвет фона */
+    color: #fff; /* Цвет текста */
+    width: 100%; /* Ширина слоя */
+
+}
+
+.pagination {
+    padding-left: 6%;
+    padding-bottom: 1%;
+}

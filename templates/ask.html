@@ -1,0 +1,50 @@
+{% extends "include/base.html" %}
+{% load static %}
+{% block link %}
+<link href="{% static "css/ask.css" %}" rel="stylesheet">
+{% endblock link %}
+{% block header %}
+{% include "include/navbar.html" %}
+{% endblock header %}
+{% load bootstrap4 %}
+
+<!-- Begin page content -->
+
+{% block content %}
+    <h2 id="new_question">New Question</h2>
+    <form class="ask_form" id="ask" method="POST" action="/ask/">
+        {% for error in error_message %}
+        <p class="error_log_message">{{ error }}</p>
+    {% endfor %}
+      {% csrf_token %}
+    {% bootstrap_form form %}
+      {% buttons %}
+      <input required type="submit" class="btn btn-outline-secondary input_form" value="ASK!">
+          {% endbuttons %}
+
+<!--      <div class="row">-->
+<!--        <div class="col-1">Title</div>-->
+<!--        <div class="col-10">-->
+<!--          <input class="form-control" id="title" name="title" placeholder="Input title">-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="row">-->
+<!--        <div class="col-1">Text</div>-->
+<!--        <div class="col-10">-->
+<!--          <textarea class="form-control" id="title" name="text" rows="10" placeholder="Input text"></textarea> -->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <div class="row">-->
+<!--        <div class="col-1">Tags</div>-->
+<!--        <div class="col-10">-->
+<!--          <input class="form-control" id="title" name="tags" placeholder="Input tags">-->
+<!--        </div>-->
+<!--      </div>-->
+<!--      <input required type="submit" class="btn btn-outline-secondary input_form" value="ASK!">-->
+    </form>
+{% endblock content %}
+{% block linkjs %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.js"></script>
+<script type="text/javascript" src="{% static "js/ask.js" %}"></script>
+{% endblock linkjs %}

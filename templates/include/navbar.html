@@ -1,0 +1,53 @@
+{% load static %}
+<header>
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand brand_askme" href="{% url 'index' %}">MyForum</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                    aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <ul class="navbar-nav me-auto mb-2 mb-md-0">
+                    <li class="search">
+                        <form class="d-flex">
+                            <input class="form-control me-2 search_text" type="search" placeholder="Search"
+                                   aria-label="Search">
+                             </form>
+                        <li class="btn_search_li">
+                            <button class="btn btn-outline-success search_bottom btn_ask" onclick="location.href={% url 'ask' %}">ASK</button>
+                </li>
+                    </li>
+                    <li class="nav-item avatar">
+                        {% if request.user.is_authenticated %}
+                        <img src="{{ user.avatar.url }}" class="ava_img">
+
+                    </li>
+                    <li class="nav-item user">
+                        <ul class="user_ul">
+                            <li>
+                                {{ request.user.username }}
+                            </li>
+                            <li>
+                                <div>
+                                    <a href="{% url 'settings' %}" class="href_settings"> Settings </a>
+                                    <a href="{% url 'logout' %}?next={{ request.path }}"> log out </a>
+                                </div>
+                            </li>
+                            </li>
+                            {% else %}
+                            <li class="nav-item user">
+                                <div>
+                                    <a href="{% url 'login' %}?next={{ request.path }}" class="href_settings"> Log in </a>
+                                    <a href="{% url 'registration' %}"> Register </a>
+                                </div>
+                            </li>
+                            {% endif %}
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>

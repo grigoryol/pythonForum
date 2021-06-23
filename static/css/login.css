@@ -1,0 +1,14 @@
+
+
+
+.login_form {
+	margin-top: 3%;
+	width: 40%
+}
+
+.form_log {
+	margin-top: 3%;
+}
+.error_log_message {
+    color: red;
+}
